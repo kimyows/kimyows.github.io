@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience — Aila Quimio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    if (localStorage.getItem('portfolio-theme') === 'light')
+      document.documentElement.setAttribute('data-theme', 'light');
+  </script>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION BAR
+  ═══════════════════════════════════════ -->
+ <nav class="p-navbar">
+    <div class="p-nav-inner">
+      <a href="about.html" class="p-nav-logo">
+        <div class="p-nav-logo-placeholder" title="Replace with logo">
+          <img src="aq.svg" alt="Logo"> 
+        </div>
+        <span class="p-nav-brand">kimyows<span>.dev</span></span>
+      </a>
+      <div class="p-nav-links">
+        <a href="index.html"        class="p-nav-link" data-page="about">About</a>
+        <a href="experience.html" class="p-nav-link" data-page="experience">Experience</a>
+        <a href="projects.html"     class="p-nav-link" data-page="projects">Projects</a>
+                <a href="contact.html"      class="p-nav-link" data-page="contact">Contact</a>
+        <button class="p-theme-toggle" id="themeToggle"><i class="bi bi-sun" id="themeIcon"></i></button>
+      </div>
+      <div class="p-nav-mobile-right">
+        <button class="p-theme-toggle" id="themeToggleMobile"><i class="bi bi-sun" id="themeIconMobile"></i></button>
+        <button class="p-hamburger" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"><i class="bi bi-list"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="offcanvas offcanvas-end p-offcanvas" id="mobileMenu" tabindex="-1">
+    <div class="offcanvas-header">
+      <span class="p-nav-brand">kimyows<span style="color:var(--p-text)">.dev</span></span>
+      <button type="button" class="p-hamburger" data-bs-dismiss="offcanvas"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav class="p-mobile-nav">
+        <a href="index.html"        class="p-mobile-link" data-page="about"><i class="bi bi-chevron-right me-2" style="font-size:.65rem;opacity:.5;"></i>About</a>
+        <a href="experience.html" class="p-mobile-link" data-page="experience"><i class="bi bi-chevron-right me-2" style="font-size:.65rem;opacity:.5;"></i>Experience</a>
+        <a href="projects.html"     class="p-mobile-link" data-page="projects"><i class="bi bi-chevron-right me-2" style="font-size:.65rem;opacity:.5;"></i>Projects</a>
+                <a href="contact.html"      class="p-mobile-link" data-page="contact"><i class="bi bi-chevron-right me-2" style="font-size:.65rem;opacity:.5;"></i>Contact</a>
+      </nav>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       ACHIEVEMENTS SECTION
+  ═══════════════════════════════════════ -->
+  <section class="p-page p-section" style="padding-top: 8rem;">
+    <div class="container">
+
+      <!-- Header -->
+      <div class="p-achievements-header reveal">
+        <h2>Experience</h2>
+        <br>
+        <p class="p-achievements-sub">My journey of turning experiences into skills 
+        <br>through continuous learning and hands-on development.</p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="p-timeline">
+
+        <!-- Item 1: Image LEFT, Text RIGHT -->
+        <div class="p-timeline-item row align-items-center g-0">
+          <div class="col-md-5 reveal">
+            <div class="p-achievement-img-wrap">
+            <img src="images/training.jpg" alt="training">
+              <div class="p-achievement-placeholder">
+                <i class="bi bi-image"></i>
+                <span></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 d-none d-md-flex p-timeline-center">
+            <div class="p-timeline-dot"></div>
+          </div>
+          <div class="col-md-5 reveal">
+            <div class="p-achievement-text">
+              <h3 class="p-achievement-title"> React & Supabase Training </h3>
+              <p class="p-achievement-desc">
+                Completed training in React and Supabase under the guidance of a colleague, 
+                gaining practical experience in frontend development, database management, and backend integration.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: Text LEFT, Image RIGHT -->
+        <div class="p-timeline-item row align-items-center g-0">
+          <div class="col-md-5 reveal">
+            <div class="p-achievement-text reversed">
+              <h3 class="p-achievement-title"> Gaming Hub Interview </h3>
+              <p class="p-achievement-desc">
+                Conducted an interview with a local gaming hub as part of our Data Communications and Networking (DCN) project. Gathered information about their network setup, internet connectivity, hardware infrastructure,
+                and operational practices to better understand real-world networking environments and apply networking concepts learned in class.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-2 d-none d-md-flex p-timeline-center">
+            <div class="p-timeline-dot"></div>
+          </div>
+          <div class="col-md-5 reveal">
+            <div class="p-achievement-img-wrap">
+            <img src="images/dcn.jpg" alt="dcn interview">
+              <div class="p-achievement-placeholder">
+                <i class="bi bi-image"></i>
+                <span>Add Photo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: Image LEFT, Text RIGHT -->
+        <div class="p-timeline-item row align-items-center g-0">
+          <div class="col-md-5 reveal">
+            <div class="p-achievement-img-wrap">
+            <img src="images/shs.jpg" alt="capstone project">
+              <div class="p-achievement-placeholder">
+                <i class="bi bi-image"></i>
+                <span>Add Photo</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 d-none d-md-flex p-timeline-center">
+            <div class="p-timeline-dot"></div>
+          </div>
+          <div class="col-md-5 reveal">
+            <div class="p-achievement-text">
+              <h3 class="p-achievement-title"> Solar-Powered Charging System </h3>
+              <p class="p-achievement-desc">
+                Contributed to the development of a capstone project focused on solar panels as a renewable energy source. 
+                Assisted with the programming, testing, and implementation of the system while collaborating with the team on research, problem-solving, and project execution.
+              </p>
+            </div>
+          </div>
+        </div>
+
+         <!-- Item 4: Text LEFT, Image RIGHT -->
+        <div class="p-timeline-item row align-items-center g-0">
+          <div class="col-md-5 reveal">
+            <div class="p-achievement-text reversed">
+              <h3 class="p-achievement-title">Cisco Certified: Introduction to Internet of Things (IoT) Badge </h3>
+              <p class="p-achievement-desc">
+                Earned a digital badge from Cisco Networking Academy after completing the Introduction to Internet of Things (IoT) course. This certification demonstrates foundational knowledge of IoT concepts, including how connected devices interact, communicate, and contribute to smart systems. 
+                It reflects an understanding of basic IoT architecture, applications, and real-world use cases in modern technology.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-2 d-none d-md-flex p-timeline-center">
+            <div class="p-timeline-dot"></div>
+          </div>
+          <div class="col-md-5 reveal">
+            <div class="p-achievement-img-wrap">
+            <img src="images/cisco.png" alt="cppt badge">
+              <div class="p-achievement-placeholder">
+                <i class="bi bi-image"></i>
+                <span>Add Photo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /p-timeline -->
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="p-footer-inner">
+        <div class="p-footer-left">
+          <div class="p-footer-logo-placeholder" title="Add school logo">
+             <img src="aq.svg" alt="AQ Logo">
+          </div>
+          <div>
+            <div class="p-footer-school-name">Polytechnic University of the Philippines</div>
+            <div class="p-footer-campus">Sto. Tomas Campus</div>
+          </div>
+        </div>
+        <div class="p-footer-right">&copy; 2026 <span>Aila Quimio</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="portfolio.js"></script>
+  <script>setActivePage('experience');</script>
+</body>
+</html>

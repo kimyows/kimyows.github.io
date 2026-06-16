@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Aila Quimio</title>
+  <meta name="description" content="Aila Quimio — BS Information Technology Student & Aspiring Developer" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Devicons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+  <!-- Portfolio Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Theme init: prevent flash -->
+  <script>
+    if (localStorage.getItem('portfolio-theme') === 'light')
+      document.documentElement.setAttribute('data-theme', 'light');
+  </script>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVIGATION BAR
+  ═══════════════════════════════════════ -->
+  <nav class="p-navbar">
+    <div class="p-nav-inner">
+      <a href="about.html" class="p-nav-logo">
+        <div class="p-nav-logo-placeholder" title="Replace with logo">
+          <img src="aq.svg" alt="Logo"> 
+        </div>
+        <span class="p-nav-brand">kimyows<span>.dev</span></span>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="p-nav-links">
+        <a href="about.html"        class="p-nav-link" data-page="about">About</a>
+        <a href="experience.html"   class="p-nav-link" data-page="experience">Experience</a>
+        <a href="projects.html"     class="p-nav-link" data-page="projects">Projects</a>
+        <a href="contact.html"      class="p-nav-link" data-page="contact">Contact</a>
+        <button class="p-theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="bi bi-sun" id="themeIcon"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Right -->
+      <div class="p-nav-mobile-right">
+        <button class="p-theme-toggle" id="themeToggleMobile" aria-label="Toggle theme">
+          <i class="bi bi-sun" id="themeIconMobile"></i>
+        </button>
+        <button class="p-hamburger" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Offcanvas -->
+  <div class="offcanvas offcanvas-end p-offcanvas" id="mobileMenu" tabindex="-1">
+    <div class="offcanvas-header">
+      <span class="p-nav-brand">kimyows<span style="color:var(--p-text)">.dev</span></span>
+      <button type="button" class="p-hamburger" data-bs-dismiss="offcanvas"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav class="p-mobile-nav">
+        <a href="about.html"        class="p-mobile-link" data-page="about"><i class="bi bi-chevron-right me-2" style="font-size:.65rem;opacity:.5;"></i>About</a>
+        <a href="experience.html"   class="p-mobile-link" data-page="experience"><i class="bi bi-chevron-right me-2" style="font-size:.65rem;opacity:.5;"></i>Experience</a>
+        <a href="projects.html"     class="p-mobile-link" data-page="projects"><i class="bi bi-chevron-right me-2" style="font-size:.65rem;opacity:.5;"></i>Projects</a>
+        <a href="contact.html"      class="p-mobile-link" data-page="contact"><i class="bi bi-chevron-right me-2" style="font-size:.65rem;opacity:.5;"></i>Contact</a>
+      </nav>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════ -->
+  <section class="p-page p-section-hero">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <!-- Profile Picture — Left -->
+        <div class="col-lg-5 text-center reveal">
+          <div class="p-avatar-wrapper">
+            <div class="p-avatar-ring">
+              <img src="images/ayii.jpg" alt="Aila Quimio">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text — Right -->
+        <div class="col-lg-7">
+          <p class="p-hero-label reveal">Portfolio <span>—</span> 2026</p>
+          <h1 class="p-hero-name reveal">Aila Quimio</h1>
+          <p class="p-hero-role reveal">BS Information Technology &nbsp;•&nbsp; 2nd Year</p>
+          <p class="p-hero-desc reveal">
+            Aspiring developer and Information Technology student at the Polytechnic University of the Philippines,
+            driven by a curiosity for technology and a desire to build meaningful, user-centered digital experiences.
+          </p>
+          <div class="d-flex gap-3 flex-wrap reveal">
+            <a href="projects.html" class="p-btn-primary">View Projects</a>
+            <a href="contact.html"  class="p-btn-outline">
+              <i class="bi bi-send"></i> Get in Touch
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       EDUCATION SECTION
+  ═══════════════════════════════════════ -->
+  <section class="p-page p-section p-section-alt">
+    <div class="container">
+      <p class="p-section-tag reveal">Background</p>
+      <h2 class="p-section-title reveal">Education</h2>
+
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6 reveal">
+          <div class="p-edu-card">
+            <span class="p-edu-badge">Current &middot; College</span>
+            <div class="p-edu-school">Polytechnic University of the Philippines</div>
+            <div class="p-edu-program">B.S. Information Technology</div>
+            <div class="p-edu-years"><i class="bi bi-calendar3 me-1"></i>2024 – Present &nbsp;|&nbsp; 2nd Year</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 reveal">
+          <div class="p-edu-card">
+            <span class="p-edu-badge">Senior High School</span>
+            <div class="p-edu-school">Saint Benilde International School</div>
+            <div class="p-edu-program">Science, Technology, Engineering &amp; Mathematics</div>
+            <div class="p-edu-years"><i class="bi bi-calendar3 me-1"></i>2022 – 2024 &nbsp;|&nbsp; STEM Strand</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 reveal">
+          <div class="p-edu-card">
+            <span class="p-edu-badge">Junior High School</span>
+            <div class="p-edu-school">St. Thomas Montessori Learning Center</div>
+            <div class="p-edu-program">&nbsp;</div>
+            <div class="p-edu-years"><i class="bi bi-calendar3 me-1"></i>2018 – 2022 &nbsp;|&nbsp; Grades 7–10</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       SKILLS SECTION (integrated into About)
+  ═══════════════════════════════════════ -->
+  <section class="p-page p-section">
+    <div class="container">
+
+      <!-- Section header -->
+      <div class="row align-items-end mb-5 g-0">
+        <div class="col-lg-6">
+          <p class="p-section-tag reveal">Expertise</p>
+          <h2 class="p-section-title reveal" style="margin-bottom: 0;">Skills & Tools.</h2>
+        </div>
+        <div class="col-lg-6 reveal">
+          <p class="p-skills-intro">
+          These are some of the technologies I’ve explored and applied while creating projects,
+          solving technical problems, and expanding my knowledge in software development.
+          </p>
+        </div>
+      </div>
+
+      <!-- Skills grid -->
+      <div class="row g-3">
+
+        <!-- Frontend Development -->
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="p-skill-card p-skill-card-v2">
+            <div class="p-skill-cat-header">
+              <i class="bi bi-code-slash"></i> Frontend
+            </div>
+            <ul class="p-skill-list">
+              <li class="p-skill-item">
+                <span class="p-skill-icon-wrap">
+                  <img class="p-skill-devicon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/html5/html5-original.svg" alt="HTML5">
+                </span>
+                <span class="p-skill-name">HTML</span>
+              </li>
+              <li class="p-skill-item">
+                <span class="p-skill-icon-wrap">
+                  <img class="p-skill-devicon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/css3/css3-original.svg" alt="CSS3">
+                </span>
+                <span class="p-skill-name">CSS</span>
+              </li>
+              <li class="p-skill-item">
+                <span class="p-skill-icon-wrap">
+                  <img class="p-skill-devicon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/javascript/javascript-original.svg" alt="JavaScript">
+                </span>
+                <span class="p-skill-name">JavaScript</span>
+              </li>
+              <li class="p-skill-item">
+                <span class="p-skill-icon-wrap">
+                  <img class="p-skill-devicon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/react/react-original.svg" alt="React">
+                </span>
+                <span class="p-skill-name">React</span>
+              </li>
+              <li class="p-skill-item">
+                <span class="p-skill-icon-wrap">
+                  <img class="p-skill-devicon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+                </span>
+                <span class="p-skill-name">Bootstrap</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Backend Development -->
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="p-skill-card p-skill-card-v2">
+            <div class="p-skill-cat-header">
+              <i class="bi bi-server"></i> Backend
+            </div>
+            <ul class="p-skill-list">
+              <li class="p-skill-item">
+                <span class="p-skill-icon-wrap">
+                  <img class="p-skill-devicon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/php/php-original.svg" alt="PHP">
+                </span>
+                <span class="p-skill-name">PHP</span>
+              </li>
+              <li class="p-skill-item">
+                <span class="p-skill-icon-wrap">
+                  <img class="p-skill-devicon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/python/python-original.svg" alt="Python">
+                </span>
+                <span class="p-skill-name">Python</span>
+              </li>
+              <li class="p-skill-item">
+                <span class="p-skill-icon-wrap">
+                  <img class="p-skill-devicon p-skill-devicon-invert" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/flask/flask-original.svg" alt="Flask">
+                </span>
+                <span class="p-skill-name">Flask</span>
+              </li>
+              <li class="p-skill-item">
+                <span class="p-skill-icon-wrap">
+                  <img class="p-skill-devicon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/csharp/csharp-original.svg" alt="C#">
+                </span>
+                <span class="p-skill-name">C#</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Database & Networking -->
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="p-skill-card p-skill-card-v2">
+            <div class="p-skill-cat-header">
+              <i class="bi bi-database"></i> Database &amp; Net
+            </div>
+            <ul class="p-skill-list">
+              <li class="p-skill-item">
+                <span class="p-skill-icon-wrap">
+                  <img class="p-skill-devicon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/mysql/mysql-original.svg" alt="MySQL">
+                </span>
+                <span class="p-skill-name">MySQL</span>
+              </li>
+              <li class="p-skill-item">
+                <span class="p-skill-icon-wrap">
+                  <img class="p-skill-devicon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/sqlite/sqlite-original.svg" alt="SQLite">
+                </span>
+                <span class="p-skill-name">SQLite</span>
+              </li>
+              <li class="p-skill-item">
+                <span class="p-skill-icon-wrap">
+                  <img class="p-skill-devicon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/supabase/supabase-original.svg" alt="Supabase">
+                </span>
+                <span class="p-skill-name">Supabase</span>
+              </li>
+              <li class="p-skill-item">
+                <span class="p-skill-icon-wrap">
+                  <i class="bi bi-router p-skill-bs-icon"></i>
+                </span>
+                <span class="p-skill-name">Cisco Packet Tracer</span>
+              </li>
+              <li class="p-skill-item">
+                <span class="p-skill-icon-wrap">
+                  <i class="bi bi-wifi p-skill-bs-icon"></i>
+                </span>
+                <span class="p-skill-name">Wireshark</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Tools & Design -->
+        <div class="col-md-6 col-xl-3 reveal">
+          <div class="p-skill-card p-skill-card-v2">
+            <div class="p-skill-cat-header">
+              <i class="bi bi-tools"></i> Tools &amp; Design
+            </div>
+            <ul class="p-skill-list">
+              <li class="p-skill-item">
+                <span class="p-skill-icon-wrap">
+                  <img class="p-skill-devicon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/git/git-original.svg" alt="Git">
+                </span>
+                <span class="p-skill-name">Git</span>
+              </li>
+              <li class="p-skill-item">
+                <span class="p-skill-icon-wrap">
+                  <img class="p-skill-devicon p-skill-devicon-github" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/github/github-original.svg" alt="GitHub">
+                </span>
+                <span class="p-skill-name">GitHub</span>
+              </li>
+              <li class="p-skill-item">
+                <span class="p-skill-icon-wrap">
+                  <img class="p-skill-devicon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/figma/figma-original.svg" alt="Figma">
+                </span>
+                <span class="p-skill-name">Figma</span>
+              </li>
+              <li class="p-skill-item">
+                <span class="p-skill-icon-wrap">
+                  <i class="bi bi-palette2 p-skill-bs-icon"></i>
+                </span>
+                <span class="p-skill-name">Canva</span>
+              </li>
+              <li class="p-skill-item">
+                <span class="p-skill-icon-wrap">
+                  <img class="p-skill-devicon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/visualstudio/visualstudio-plain.svg" alt="Visual Studio">
+                </span>
+                <span class="p-skill-name">Visual Studio</span>
+              </li>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="p-footer-inner">
+        <div class="p-footer-left">
+          <div class="p-footer-logo-placeholder" title="Add school logo">
+             <img src="aq.svg" alt="AQ Logo">
+          </div>
+          <div>
+            <div class="p-footer-school-name">Polytechnic University of the Philippines</div>
+            <div class="p-footer-campus">Sto. Tomas Campus</div>
+          </div>
+        </div>
+        <div class="p-footer-right">&copy; 2026 <span>Aila Quimio</span></div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Shared Portfolio JS -->
+  <script src="portfolio.js"></script>
+
+  <!-- Active page -->
+  <script>setActivePage('about');</script>
+</body>
+</html>
