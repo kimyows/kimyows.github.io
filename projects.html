@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Experience — Aila Quimio</title>
+  <title>Projects — Aila Quimio</title>
   <link rel="icon" href="images/favicon.ico">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,44 +14,130 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
   <link rel="stylesheet" href="style.css">
 
+  <!-- Compact project cards: size-only overrides (loaded after style.css) -->
+  <style>
+    /* Slightly narrower grid so each card takes less width */
+    .p-page > .container { max-width: 1140px; }
+
+    /* Equal-height columns and cards */
+    .p-page .row > [class*="col-"] { display: flex; }
+    .p-page .p-proj-card {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Uniform, shorter image area */
+    .p-page .p-proj-img {
+      position: relative;
+      height: 170px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .p-page .p-proj-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Tighter body spacing; links pinned to the bottom for alignment */
+    .p-page .p-proj-body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 1.1rem 1.15rem;
+    }
+    .p-page .p-proj-desc {
+      font-size: .85rem;
+      line-height: 1.55;
+      margin-bottom: .85rem;
+    }
+    .p-page .p-proj-tech { margin-bottom: .85rem; }
+    .p-page .p-proj-links { margin-top: auto; }
+
+    @media (max-width: 991.98px) {
+      .p-page .p-proj-img { height: 180px; }
+    }
+    @media (max-width: 575.98px) {
+      .p-page .p-proj-img { height: 160px; }
+      .p-page .p-proj-body { padding: 1rem; }
+    }
+
+    /* ── Web Development folder (clickable) ── */
+    .p-folder-wrap { display: flex; justify-content: flex-start; margin: -.5rem 0 2rem; }
+    .p-folder {
+      --f-body: #1b1b22;
+      --f-tab: #2c2c36;
+      --f-line: rgba(255,255,255,.75);
+      --f-label-bg: #14141a;
+      --f-shadow: rgba(0,0,0,.45);
+      --f-accent: var(--p-accent, #8b9cff);
+      position: relative;
+      display: block;
+      width: min(340px, 100%);
+      aspect-ratio: 360 / 84;
+      color: var(--p-text, #fff);
+      text-decoration: none;
+      transition: transform .3s ease;
+    }
+    :root[data-theme="light"] .p-folder {
+      --f-body: #f1f1f3;
+      --f-tab: #cfd0d4;
+      --f-line: #15151a;
+      --f-label-bg: #ffffff;
+      --f-shadow: rgba(0,0,0,.18);
+    }
+    .p-folder:hover, .p-folder:focus-visible { transform: translateY(-4px); color: var(--p-text, #fff); }
+    .p-folder:focus-visible { outline: 2px solid var(--f-accent); outline-offset: 6px; border-radius: 16px; }
+    .p-folder svg {
+      width: 100%; height: 100%; display: block; overflow: visible;
+      filter: drop-shadow(0 6px 12px var(--f-shadow));
+      transition: filter .3s ease;
+    }
+    .p-folder:hover svg { filter: drop-shadow(0 10px 18px var(--f-shadow)); }
+    .p-folder .f-tab, .p-folder .f-body {
+      stroke: var(--f-line); stroke-width: 2.5; stroke-linejoin: round;
+      transition: fill .3s ease, stroke .3s ease, transform .3s ease;
+    }
+    .p-folder .f-tab { fill: var(--f-tab); }
+    .p-folder .f-body { fill: var(--f-body); }
+    .p-folder:hover .f-tab { transform: translateY(-3px); }
+    .p-folder:hover .f-body, .p-folder:focus-visible .f-body { stroke: var(--f-accent); }
+    .p-folder:hover .f-tab, .p-folder:focus-visible .f-tab { stroke: var(--f-accent); }
+
+    .p-folder-icon {
+      position: absolute; right: 6%; top: 63%;
+      transform: translateY(-50%);
+      display: flex; flex-direction: row; align-items: center; gap: .6rem;
+      font-size: 1.5rem; line-height: 1; color: var(--f-accent);
+      opacity: .9; pointer-events: none;
+      transition: transform .3s ease;
+    }
+    .p-folder:hover .p-folder-icon { transform: translateY(-50%) translateX(-3px) scale(1.06); }
+    .p-folder-open {
+      font-family: 'Space Mono', monospace; font-size: .6rem; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--p-text, #fff); opacity: .6; order: -1;
+    }
+    .p-folder-label {
+      position: absolute; left: 3.5%; top: 63%; transform: translateY(-50%);
+      padding: .25rem .7rem;
+      font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: .85rem;
+      letter-spacing: .02em; text-transform: uppercase; white-space: nowrap;
+      background: var(--f-label-bg); border: 2px solid var(--f-line); border-radius: 9px;
+      transition: border-color .3s ease, color .3s ease;
+    }
+    .p-folder:hover .p-folder-label { border-color: var(--f-accent); color: var(--f-accent); }
+    @media (max-width: 399.98px) { .p-folder-open { display: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      .p-folder, .p-folder * { transition: none !important; }
+    }
+  </style>
+
   <script>
     if (localStorage.getItem('portfolio-theme') === 'light')
       document.documentElement.setAttribute('data-theme', 'light');
   </script>
-
-  <!-- Picture container polish (appended override; existing code untouched) -->
-  <style>
-    .p-achievement-img-wrap{
-      --q-accent: var(--p-accent, var(--p-primary, #6c8cff));
-      position: relative;
-      overflow: hidden;
-      padding: 8px;
-      border-radius: 22px;
-      border: 2px solid color-mix(in srgb, var(--q-accent) 55%, transparent);
-      background: color-mix(in srgb, var(--p-text, #888) 6%, transparent);
-      box-shadow:
-        0 0 0 6px color-mix(in srgb, var(--q-accent) 10%, transparent),
-        0 18px 40px -16px rgba(0,0,0,.45);
-      transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
-    }
-    .p-achievement-img-wrap img{
-      display: block;
-      width: 100%;
-      border-radius: 15px;
-      object-fit: cover;
-    }
-    .p-achievement-img-wrap:hover{
-      transform: translateY(-4px);
-      border-color: var(--q-accent);
-      box-shadow:
-        0 0 0 8px color-mix(in srgb, var(--q-accent) 16%, transparent),
-        0 24px 48px -16px rgba(0,0,0,.55);
-    }
-    @media (prefers-reduced-motion: reduce){
-      .p-achievement-img-wrap{ transition: none; }
-      .p-achievement-img-wrap:hover{ transform: none; }
-    }
-  </style>
 </head>
 
 <body>
@@ -59,14 +145,14 @@
   <!-- ═══════════════════════════════════════
        NAVIGATION BAR
   ═══════════════════════════════════════ -->
- <nav class="p-navbar">
-    <div class="p-nav-inner">
-      <a href="about.html" class="p-nav-logo">
-        <div class="p-nav-logo-placeholder" title="Replace with logo">
-          <img src="aq.svg" alt="Logo"> 
-        </div>
-        <span class="p-nav-brand">kimyows<span>.dev</span></span>
-      </a>
+  <nav class="p-navbar">
+      <div class="p-nav-inner">
+        <a href="about.html" class="p-nav-logo">
+          <div class="p-nav-logo-placeholder" title="Replace with logo">
+            <img src="aq.svg" alt="Logo"> 
+          </div>
+          <span class="p-nav-brand">kimyows<span>.dev</span></span>
+        </a>
       <div class="p-nav-links">
         <a href="index.html"        class="p-nav-link" data-page="about">About</a>
         <a href="experience.html" class="p-nav-link" data-page="experience">Experience</a>
@@ -98,159 +184,218 @@
 
 
   <!-- ═══════════════════════════════════════
-       ACHIEVEMENTS SECTION
+       PROJECTS SECTION
   ═══════════════════════════════════════ -->
   <section class="p-page p-section" style="padding-top: 8rem;">
     <div class="container">
+      <h2 class="p-section-title reveal">Projects</h2>
+      <p class="p-achievements-sub reveal">A collection of projects I've built throughout my learning journey, 
+      <br> each contributing to my growth in software and web development.
+      </p>
 
-      <!-- Header -->
-      <div class="p-achievements-header reveal">
-        <span class="p-achievements-tagline">WHERE I'VE BEEN</span>
-        <h2>Experience</h2>
-        <br>
-        <p class="p-achievements-sub">A timeline of training, fieldwork, and certifications
-        <br>that shaped how I build and think about technology.</p>
+      <!-- Web Development folder -->
+      <div class="p-folder-wrap reveal">
+        <a href="https://kimyows.github.io/web-dev/Act01/index.html" class="p-folder" aria-label="Web Development">
+          <svg viewBox="0 0 360 84" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path class="f-tab" d="M148 6 H330 Q342 6 342 18 V36 H172 Z"/>
+            <path class="f-body" d="M14 6 H150 Q162 6 167 16 Q172 26 188 26 H346 Q356 26 356 36 V70 Q356 80 346 80 H14 Q4 80 4 70 V16 Q4 6 14 6 Z"/>
+          </svg>
+          <span class="p-folder-icon"><i class="bi bi-code-slash"></i><span class="p-folder-open">Open folder</span></span>
+          <span class="p-folder-label">Web Development</span>
+        </a>
       </div>
 
-      <!-- Timeline -->
-      <div class="p-timeline">
+      <div class="row g-4">
 
-        <!-- Item 1: Image LEFT, Text RIGHT -->
-        <div class="p-timeline-item row align-items-center g-0">
-          <div class="col-md-5 reveal">
-            <div class="p-achievement-img-wrap">
-            <img src="images/training.jpg" alt="training">
-              <div class="p-achievement-placeholder">
+        <!-- Project 001 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="p-proj-card">
+            <div class="p-proj-img">
+              <img src="images/cryptfall.jpg" alt="CryptFall">
+              <div class="p-proj-img-placeholder">
                 <i class="bi bi-image"></i>
-                <span></span>
+                <span>Project Image</span>
               </div>
             </div>
-          </div>
-          <div class="col-md-2 d-none d-md-flex p-timeline-center">
-            <div class="p-timeline-dot"></div>
-          </div>
-          <div class="col-md-5 reveal">
-            <div class="p-achievement-text">
-              <span class="p-achievement-badge"><i class="bi bi-laptop"></i> Mentorship</span>
-              <h3 class="p-achievement-title">React & Supabase Training</h3>
-              <p class="p-achievement-desc">
-                Completed hands-on training in React and Supabase under the guidance of a colleague,
-                building practical fluency in component-driven frontend development, schema design, and
-                backend integration through real, working code rather than tutorials alone.
+            <div class="p-proj-body">
+              <div class="p-proj-title">CryptFall</div>
+              <p class="p-proj-desc">
+                A Pygame-based arcade game where players catch falling items, dodge harmful obstacles,
+                and personalize their character by choosing from preset avatars or using a photo captured through a webcam.
               </p>
-              <div class="p-achievement-tags">
-                <span class="p-achievement-tag"><i class="bi bi-code-slash"></i> React</span>
-                <span class="p-achievement-tag"><i class="bi bi-database"></i> Supabase</span>
-                <span class="p-achievement-tag"><i class="bi bi-plug"></i> API Integration</span>
+              <div class="p-proj-tech">
+                <span class="p-tech-pill">PYHTON</span>
+                <span class="p-tech-pill">PYGAME</span>
+                <span class="p-tech-pill">OPENCV</span>
+                <span class="p-tech-pill">NUMPY</span>
+              </div>
+              <div class="p-proj-links">
+                <a href="https://github.com/kimyows" target="_blank" rel="noopener" class="p-proj-link">
+                  <i class="bi bi-github"></i> View Code
+                </a>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Item 2: Text LEFT, Image RIGHT -->
-        <div class="p-timeline-item row align-items-center g-0">
-          <div class="col-md-5 reveal">
-            <div class="p-achievement-text reversed">
-              <span class="p-achievement-badge"><i class="bi bi-broadcast-pin"></i> Field Research</span>
-              <h3 class="p-achievement-title">Gaming Hub Network Interview</h3>
-              <p class="p-achievement-desc">
-                Led an on-site interview with a local gaming hub as part of a Data Communications and
-                Networking (DCN) project, documenting their network topology, connectivity setup, and
-                hardware infrastructure to connect classroom theory with real-world operational practice.
-              </p>
-              <div class="p-achievement-tags">
-                <span class="p-achievement-tag"><i class="bi bi-diagram-3"></i> Networking</span>
-                <span class="p-achievement-tag"><i class="bi bi-router"></i> Infrastructure</span>
-                <span class="p-achievement-tag"><i class="bi bi-clipboard-data"></i> Field Research</span>
+        <!-- Project 002 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="p-proj-card">
+            <div class="p-proj-img">
+              <img src="images/bloom.png" alt="Bloom POS">
+              <div class="p-proj-img-placeholder">
+                <i class="bi bi-image"></i>
+                <span>Project Image</span>
               </div>
             </div>
-          </div>
-          <div class="col-md-2 d-none d-md-flex p-timeline-center">
-            <div class="p-timeline-dot"></div>
-          </div>
-          <div class="col-md-5 reveal">
-            <div class="p-achievement-img-wrap">
-            <img src="images/dcn.jpg" alt="dcn interview">
-              <div class="p-achievement-placeholder">
-                <i class="bi bi-image"></i>
-                <span>Add Photo</span>
+            <div class="p-proj-body">
+              <div class="p-proj-title">Bloom: POS System</div>
+              <p class="p-proj-desc">
+              A comprehensive Point-of-Sale (POS) system designed to streamline inventory management,
+              monitor sales performance, and efficiently handle transaction processing for retail businesses.
+              </p>
+              <div class="p-proj-tech">
+                <span class="p-tech-pill">HTML</span>
+                <span class="p-tech-pill">CSS</span>
+                <span class="p-tech-pill">JAVASCRIPT</span>
+                <span class="p-tech-pill">PHP</span>
+                <span class="p-tech-pill">MYSQL</span>
+              </div>
+              <div class="p-proj-links">
+                <a href="https://github.com/kimyows" target="_blank" rel="noopener" class="p-proj-link">
+                  <i class="bi bi-github"></i> View Code
+                </a>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Item 3: Image LEFT, Text RIGHT -->
-        <div class="p-timeline-item row align-items-center g-0">
-          <div class="col-md-5 reveal">
-            <div class="p-achievement-img-wrap">
-            <img src="images/shs.jpg" alt="capstone project">
-              <div class="p-achievement-placeholder">
+        <!-- Project 003 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="p-proj-card">
+            <div class="p-proj-img">
+              <img src="images/nutriscale.jpg" alt="NutriScale">
+              <div class="p-proj-img-placeholder">
                 <i class="bi bi-image"></i>
-                <span>Add Photo</span>
+                <span>Project Image</span>
               </div>
             </div>
-          </div>
-          <div class="col-md-2 d-none d-md-flex p-timeline-center">
-            <div class="p-timeline-dot"></div>
-          </div>
-          <div class="col-md-5 reveal">
-            <div class="p-achievement-text">
-              <span class="p-achievement-badge"><i class="bi bi-sun"></i> Capstone Project · SHS</span>
-              <h3 class="p-achievement-title">Solar-Powered Charging System</h3>
-              <p class="p-achievement-desc">
-                Contributed to a capstone project exploring solar panels as a renewable energy source,
-                taking part in programming, testing, and implementing the charging system while
-                collaborating with a team on research, troubleshooting, and end-to-end execution.
+            <div class="p-proj-body">
+              <div class="p-proj-title">Nutriscale</div>
+              <p class="p-proj-desc">
+                A health and wellness application designed to calculate Body Mass Index (BMI) and deliver personalized dietary recommendations,
+                 helping users make informed nutrition and lifestyle choices based on their BMI classification.
               </p>
-              <div class="p-achievement-tags">
-                <span class="p-achievement-tag"><i class="bi bi-cpu"></i> Embedded Systems</span>
-                <span class="p-achievement-tag"><i class="bi bi-battery-charging"></i> Renewable Energy</span>
-                <span class="p-achievement-tag"><i class="bi bi-people"></i> Team Collaboration</span>
+              <div class="p-proj-tech">
+                <span class="p-tech-pill">PHYTON</span>
+                <span class="p-tech-pill">SQLITE</span>
+                <span class="p-tech-pill">CSS</span>
+              </div>
+              <div class="p-proj-links">
+                <a href="https://github.com/kimyows" target="_blank" rel="noopener" class="p-proj-link">
+                  <i class="bi bi-github"></i> View Code
+                </a>
               </div>
             </div>
           </div>
         </div>
 
-         <!-- Item 4: Text LEFT, Image RIGHT -->
-        <div class="p-timeline-item row align-items-center g-0">
-          <div class="col-md-5 reveal">
-            <div class="p-achievement-text reversed">
-              <span class="p-achievement-badge"><i class="bi bi-patch-check"></i> Certification · Cisco</span>
-              <h3 class="p-achievement-title">Introduction to IoT, Cisco Networking Academy</h3>
-              <p class="p-achievement-desc">
-                Earned a digital badge for completing Cisco's Introduction to Internet of Things course,
-                covering how connected devices interact, communicate, and contribute to smart systems —
-                building a working foundation in IoT architecture and real-world applications.
-              </p>
-              <div class="p-achievement-tags">
-                <span class="p-achievement-tag"><i class="bi bi-hdd-network"></i> IoT</span>
-                <span class="p-achievement-tag"><i class="bi bi-diagram-2"></i> Systems Architecture</span>
-                <span class="p-achievement-tag"><i class="bi bi-award"></i> Cisco Certified</span>
+        <!-- Project 004 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="p-proj-card">
+            <div class="p-proj-img">
+              <img src="images/figma.png" alt="figma">
+              <div class="p-proj-img-placeholder">
+                <i class="bi bi-image"></i>
+                <span>Project Image</span>
               </div>
             </div>
-          </div>
-          <div class="col-md-2 d-none d-md-flex p-timeline-center">
-            <div class="p-timeline-dot"></div>
-          </div>
-          <div class="col-md-5 reveal">
-            <div class="p-achievement-img-wrap">
-            <img src="images/cisco.png" alt="cppt badge">
-              <div class="p-achievement-placeholder">
-                <i class="bi bi-image"></i>
-                <span>Add Photo</span>
+            <div class="p-proj-body">
+              <div class="p-proj-title">Web Design (Figma)</div>
+              <p class="p-proj-desc">
+                A user-centered web interface designed in Figma, focusing on modern aesthetics, intuitive navigation, responsive layouts, and seamless user experience. The design process emphasizes visual consistency, usability,
+                and effective presentation of content across different devices.
+              </p>
+              <div class="p-proj-tech">
+                <span class="p-tech-pill">FIGMA</span>
+              </div>
+              <div class="p-proj-links">
+                <a href="https://github.com/kimyows" target="_blank" rel="noopener" class="p-proj-link">
+                  <i class="bi bi-github"></i> View Code
+                </a>
               </div>
             </div>
           </div>
         </div>
 
-      </div><!-- /p-timeline -->
+                <!-- Project 005 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="p-proj-card">
+            <div class="p-proj-img">
+              <img src="images/brew.png" alt="coffee shop pos">
+              <div class="p-proj-img-placeholder">
+                <i class="bi bi-image"></i>
+                <span>Project Image</span>
+              </div>
+            </div>
+            <div class="p-proj-body">
+              <div class="p-proj-title">Coffee Shop POS System Mockup</div>
+              <p class="p-proj-desc">
+               A Point-of-Sale (POS) system mockup developed for a coffee shop setting, showcasing key functionalities such as order processing, product selection, payment handling, and sales management.
+              Designed in Figma, the project demonstrates a realistic POS workflow and system layout that supports efficient daily operations in a café environment.
+              </p>
+              <div class="p-proj-tech">
+                <span class="p-tech-pill">HTML</span>
+                <span class="p-tech-pill">CSS</span>
+                <span class="p-tech-pill">JAVASCRIPT</span>
+                <span class="p-tech-pill">PHP</span>
+                <span class="p-tech-pill">MYSQL</span>
+              </div>
+              <div class="p-proj-links">
+                <a href="https://github.com/kimyows" target="_blank" rel="noopener" class="p-proj-link">
+                  <i class="bi bi-github"></i> View Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 006 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="p-proj-card">
+            <div class="p-proj-img">
+              <img src="images/sanrio.jpg" alt="sanrio">
+              <div class="p-proj-img-placeholder">
+                <i class="bi bi-image"></i>
+                <span>Project Image</span>
+              </div>
+            </div>
+            <div class="p-proj-body">
+              <div class="p-proj-title">Sanrio Merchandise E-Commerce</div>
+              <p class="p-proj-desc">
+               A web-based shopping platform that enables users to browse and purchase Sanrio-inspired products through a responsive and intuitive interface.
+              The project focuses on delivering an engaging user experience, efficient product navigation, and a visually cohesive design.
+              </p>
+              <div class="p-proj-tech">
+                <span class="p-tech-pill">HTML</span>
+                <span class="p-tech-pill">CSS</span>
+                <span class="p-tech-pill">JAVASCRIPT</span>
+                <span class="p-tech-pill">MYSQL</span>
+              </div>
+              <div class="p-proj-links">
+                <a href="https://github.com/kimyows" target="_blank" rel="noopener" class="p-proj-link">
+                  <i class="bi bi-github"></i> View Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
 
-  <!-- ═══════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════ -->
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="p-footer-inner">
@@ -270,6 +415,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="portfolio.js"></script>
-  <script>setActivePage('experience');</script>
+  <script>setActivePage('projects');</script>
 </body>
 </html>
