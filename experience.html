@@ -18,6 +18,40 @@
     if (localStorage.getItem('portfolio-theme') === 'light')
       document.documentElement.setAttribute('data-theme', 'light');
   </script>
+
+  <!-- Picture container polish (appended override; existing code untouched) -->
+  <style>
+    .p-achievement-img-wrap{
+      --q-accent: var(--p-accent, var(--p-primary, #6c8cff));
+      position: relative;
+      overflow: hidden;
+      padding: 8px;
+      border-radius: 22px;
+      border: 2px solid color-mix(in srgb, var(--q-accent) 55%, transparent);
+      background: color-mix(in srgb, var(--p-text, #888) 6%, transparent);
+      box-shadow:
+        0 0 0 6px color-mix(in srgb, var(--q-accent) 10%, transparent),
+        0 18px 40px -16px rgba(0,0,0,.45);
+      transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+    }
+    .p-achievement-img-wrap img{
+      display: block;
+      width: 100%;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+    .p-achievement-img-wrap:hover{
+      transform: translateY(-4px);
+      border-color: var(--q-accent);
+      box-shadow:
+        0 0 0 8px color-mix(in srgb, var(--q-accent) 16%, transparent),
+        0 24px 48px -16px rgba(0,0,0,.55);
+    }
+    @media (prefers-reduced-motion: reduce){
+      .p-achievement-img-wrap{ transition: none; }
+      .p-achievement-img-wrap:hover{ transform: none; }
+    }
+  </style>
 </head>
 
 <body>
